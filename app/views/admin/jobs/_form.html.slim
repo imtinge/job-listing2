@@ -1,0 +1,10 @@
+
+.col-md-4.col-md-offset-4
+  = simple_form_for [:admin, @job] do |f|
+    =f.input :title, label: "岗位名称"
+    =f.input :description, label: "岗位描述"
+    =f.input :wage_lower_bound, as: :integer, label: "薪资下限"
+    =f.input :wage_upper_bound, as: :integer, label: "薪资上限"
+    =f.input :contact_email, as: :email, label: "联系邮箱"
+    =f.input :is_hidden, as: :boolean, label: "是否可见"
+    =f.button :submit

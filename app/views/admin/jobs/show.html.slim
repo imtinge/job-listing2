@@ -1,6 +1,7 @@
+
 .container
   .pull-right
-    = link_to 'Edit', edit_job_path(@job), class: 'btn btn-primary'
+    = link_to '编辑岗位', edit_admin_job_path(@job), class: 'btn btn-primary'
   .jumbotron
     h2
       = @job.title

@@ -1,0 +1,27 @@
+h2 工作一览
+.pull-right
+  = link_to '发布岗位', new_admin_job_path, class: 'btn btn-default'
+table.table.table-boldered
+  thead
+    tr
+      th 发布日期
+      th 岗位名称
+      th[colspan="3"]
+  tbody
+    - @jobs.each do |job|
+      tr
+        td
+          = job.created_at.to_date
+        td
+          => render_job_status job
+          =< link_to job.title, admin_job_path(job)
+        td 
+          => link_to render_icon('fa fa-trash-o'), admin_job_path(job), method: :delte, class: 'btn btn-xs btn-danger'
+          => link_to render_icon('fa fa-pencil'), edit_admin_job_path(job), class: 'btn btn-xs btn-primary'
+          -if job.is_hidden
+            => link_to render_icon('fa fa-toggle-on'), publish_admin_job_path(job), method: :post, class: 'btn btn-xs btn-warning'
+          -else
+            => link_to render_icon('fa fa-toggle-off'), hide_admin_job_path(job), method: :post, class: 'btn btn-xs btn-default'
+
+
+

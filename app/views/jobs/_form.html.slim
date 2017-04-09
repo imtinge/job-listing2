@@ -2,4 +2,7 @@
   = simple_form_for @job do |f|
     =f.input :title
     =f.input :description
+    =f.input :wage_lower_bound, as: :integer, label: "薪资下限"
+    =f.input :wage_upper_bound, as: :integer, label: "薪资上限"
+    =f.input :contact_email, as: :email
     =f.button :submit

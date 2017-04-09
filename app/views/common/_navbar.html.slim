@@ -1,4 +1,4 @@
-nav.navbar.navbar-default#navigation
+nav.navbar.navbar-inverse#navigation
   .container-fluid
     .navbar-header
       a.navbar-brand[href="/"]
@@ -17,6 +17,9 @@ nav.navbar.navbar-default#navigation
               == current_user.email
               b.caret
             ul.dropdown-menu
+              -if current_user.admin?
+                li
+                  == link_to '管理员面板', admin_jobs_path
               li
                 == link_to '退出', destroy_user_session_path, method: :delete
 
