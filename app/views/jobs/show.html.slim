@@ -1,0 +1,7 @@
+.container
+  = link_to 'Edit', edit_job_path(@job), class: 'btn btn-primary pull-right'
+  .jumbotron
+    h2
+      = @job.title
+    p
+      = @job.description
