@@ -1,0 +1,22 @@
+nav.navbar.navbar-default#navigation
+  .container-fluid
+    .navbar-header
+      a.navbar-brand[href="/"]
+        | Job Listing 
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        -unless user_signed_in?
+          li
+            == link_to '注册', new_user_registration_path
+          li
+            == link_to '登陆', new_user_session_path
+        -else
+          li.dropdown
+            a.dropdown-toggle[href="#" data-toggle="dropdown"]
+              | Hi,
+              == current_user.email
+              b.caret
+            ul.dropdown-menu
+              li
+                == link_to '退出', destroy_user_session_path, method: :delete
+
