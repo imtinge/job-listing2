@@ -1,8 +1,7 @@
 .container
-  .pull-right
-    = link_to 'Edit', edit_job_path(@job), class: 'btn btn-primary'
-  .jumbotron
-    h2
-      = @job.title
-    p
-      = @job.description
+  h1
+    = @job.title
+  p
+    = simple_format @job.description
+  .text-center
+    = link_to '提交简历', new_job_resume_path(@job), style: 'font-size: 30px; text-decoration: underline;'

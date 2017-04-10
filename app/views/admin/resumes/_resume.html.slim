@@ -1,0 +1,16 @@
+.panel.panel-default
+  .panel-heading
+    .row
+      .col-md-12
+        h3.panel-title
+          = resume.user.email
+  .panel-body
+    .trix-content
+      p
+        = simple_format resume.content
+    hr
+    - if resume.attachment.present?
+      i.fa.fa-paperclip
+      = link_to '下载简历', resume.attachment_url
+    - else
+      | No Attachement

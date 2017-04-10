@@ -1,8 +1,9 @@
-nav.navbar.navbar-inverse#navigation
+nav.navbar.navbar-default#navigation
   .container-fluid
     .navbar-header
       a.navbar-brand[href="/"]
-        | Job Listing 
+        => render_icon 'fa fa-rocket'
+        | 24K Offer
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         -unless user_signed_in?

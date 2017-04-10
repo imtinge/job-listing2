@@ -3,43 +3,51 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   def index
-    @jobs = Job.where(is_hidden: false).order('created_at DESC')
-  end
-
-  def new
-    @job = Job.new
+    @jobs = case params[:order]
+            when 'by_lower_bound'
+              Job.published.order('wage_lower_bound DESC')
+            when 'by_upper_bound'
+              Job.published.order('wage_upper_bound DESC')
+            else
+              Job.published.recent
+            end
   end
 
   def show
-
+    if @job.is_hidden
+      redirect_to root_path, warning: "岗位已归档"
+    end
   end
 
-  def edit
+  # def new
+  #   @job = Job.new
+  # end
 
-  end
+  # def edit
+  # end
 
-  def create
-    @job = Job.new(job_params)
+  # def create
+  #   @job = Job.new(job_params)
     
-    if @job.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
+  #   if @job.save
+  #     redirect_to root_path
+  #   else
+  #     render :new
+  #   end
+  # end
 
-  def update
-    if @job.update(job_params)
-      redirect_to root_path
-    else
-      render :edit, notice: "Update success"
-    end
-  end
+  # def update
+  #   if @job.update(job_params)
+  #     redirect_to root_path
+  #   else
+  #     render :edit, notice: "Update success"
+  #   end
+  # end
 
-  def destroy
-    @job.destroy
-    redirect_to root_path, notice: "Job deleted"
-  end
+  # def destroy
+  #   @job.destroy
+  #   redirect_to root_path, notice: "Job deleted"
+  # end
 
   private
     

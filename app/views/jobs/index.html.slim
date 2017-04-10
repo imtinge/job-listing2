@@ -1,11 +1,22 @@
 h2 工作一览
-.pull-right
-  = link_to '发布岗位', new_job_path, class: 'btn btn-default'
+.dropdown.pull-right
+  button#dropdownMenu1.btn.btn-default.dropdown-toggle[type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"]
+    | 排序
+    span.caret
+  ul.dropdown-menu[aria-labelledby="dropdownMenu1"]
+    li
+      = link_to '按薪资下限排序', jobs_path(order: 'by_lower_bound')
+    li
+      = link_to '按薪资上限排序', jobs_path(order: 'by_upper_bound')
+    li
+      = link_to '按发布时间排序', jobs_path
 table.table.table-boldered
   thead
     tr
       th 发布日期
       th 岗位名称
+      th 薪资下限
+      th 薪资上限
       th[colspan="2"]
   tbody
     - @jobs.each do |job|
@@ -14,6 +25,10 @@ table.table.table-boldered
           = job.created_at.to_date
         td
           = link_to job.title, job_path(job)
+        td
+          = link_to job.wage_lower_bound
+        td
+          = link_to job.wage_upper_bound
         td 
           => link_to 'Edit', edit_job_path(job)
           | |

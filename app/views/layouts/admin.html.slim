@@ -1,17 +1,18 @@
 doctype html
 html
   head
-    title Job Listing
+    title 24K Offer
     = csrf_meta_tags
 
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .container-fluid
+    .row
       == render 'common/navbar'
+    .container-fluid
       == render 'common/flashes'
       .row
-        .col-md-2
+        .col-md-2[style="margin-top: 60px;"]
           == render 'common/sidebar'
         .col-md-10
           == yield

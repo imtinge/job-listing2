@@ -1,12 +1,15 @@
 h2 工作一览
 .pull-right
   = link_to '发布岗位', new_admin_job_path, class: 'btn btn-default'
-table.table.table-boldered
+table.table.table-boldered.table-striped.custtab
   thead
     tr
       th 发布日期
       th 岗位名称
-      th[colspan="3"]
+      th 简历数量
+      th 薪资下限
+      th 薪资上限
+      th[colspan="3"] 管理选项
   tbody
     - @jobs.each do |job|
       tr
@@ -15,13 +18,19 @@ table.table.table-boldered
         td
           => render_job_status job
           =< link_to job.title, admin_job_path(job)
+        td
+          = link_to job.resumes.count, admin_job_resumes_path(job)
+        td
+          = job.wage_lower_bound
+        td
+          = job.wage_upper_bound
         td 
-          => link_to render_icon('fa fa-trash-o'), admin_job_path(job), method: :delte, class: 'btn btn-xs btn-danger'
           => link_to render_icon('fa fa-pencil'), edit_admin_job_path(job), class: 'btn btn-xs btn-primary'
+          => link_to render_icon('fa fa-trash-o'), admin_job_path(job), method: :delte, class: 'btn btn-xs btn-danger'
           -if job.is_hidden
-            => link_to render_icon('fa fa-toggle-on'), publish_admin_job_path(job), method: :post, class: 'btn btn-xs btn-warning'
+            => link_to render_icon('fa fa-eye'), publish_admin_job_path(job), method: :post, class: 'btn btn-xs btn-success'
           -else
-            => link_to render_icon('fa fa-toggle-off'), hide_admin_job_path(job), method: :post, class: 'btn btn-xs btn-default'
+            => link_to render_icon('fa fa-eye-slash'), hide_admin_job_path(job), method: :post, class: 'btn btn-xs btn-warning'
 
 
 

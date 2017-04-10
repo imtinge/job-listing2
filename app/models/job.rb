@@ -7,6 +7,10 @@ class Job < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :contact_email, presence: true, format: { with: VALID_EMAIL_REGEX }
 
+  scope :published, -> { where(is_hidden: false) }
+  scope :recent, -> { order('created_at DESC') }
+  has_many :resumes
+
   def hide!
     self.is_hidden = true
     self.save
