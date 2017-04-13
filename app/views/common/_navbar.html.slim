@@ -1,9 +1,8 @@
-nav.navbar.navbar-default#navigation
-  .container-fluid
+nav.navbar.navbar-inverse.navbar-fixed-top#navigation
+  .container
     .navbar-header
       a.navbar-brand[href="/"]
-        => render_icon 'fa fa-rocket'
-        | 24K Offer
+        | 闪工网
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         -unless user_signed_in?

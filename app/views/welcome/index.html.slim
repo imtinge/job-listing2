@@ -1,27 +1,67 @@
-.jumbotron
-  h1.title 24K Offer
-  p.slogan
-    | 24K Offer 是一个提供24K工作岗位的求职网站
-    br
-    | 我们希望藉由这个网站，能让大家找到且应征上高薪且优质的工作
-    br
-    | 凭借自己的努力和天份也会变成Winner
-  p.lead
-    a.btn.btn-lg.btn-danger[href="/jobs"] 马上应征
-section#company[style="margin-top: 60px;"]
-  .container-fluid
-    row
-      .col-sm-4.text-center
-        =render_icon 'fa fa-map-marker fa-5x'
-        .caption
-          h3 贵州省铜仁市碧江区环东路58号
-      .col-sm-4.text-center
-        =render_icon 'fa fa-address-book-o fa-5x'
-        .caption
-          h3 info@24koffer.com
-      .col-sm-4.text-center
-        =render_icon 'fa fa-phone fa-5x'
-        .caption
-          h3 0856-5220349
-          
+.row
+  #landing-page-img-1.jumbotron.text-center
+    h1 闪工网
+    h2 找工作 从未如此迅捷, 让你快速找到属于你的高薪优质的工作
+    p#action_button.lead
+      a.btn.btn-lg.btn-danger[href="/jobs"] 马上应征
+    
+  .container#three-jobs
+    .row.text-center
+      .col-lg-4
+        = image_tag 'https://devimages.apple.com.edgekey.net/assets/elements/icons/swift/swift-64x64.png', height: 64
+        h2 Windows系统工程师
+        p Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+        p
+          a.btn.btn-default[href="#" role="button"]
+            | 查看详情
+      .col-lg-4
+        = image_tag 'https://www.ruby-lang.org/images/header-ruby-logo.png', height: 64
+        h2 Mac系统工程师
+        p Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+        p
+          a.btn.btn-default[href="#" role="button"]
+            | 查看详情
+      .col-lg-4
+        = image_tag 'http://www.lua.org/images/lua.gif', height: 64
+        h2 Linux系统工程师
+        p Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.
+        p
+          a.btn.btn-default[href="#" role="button"]
+            | 查看详情
+
+  .container
+    hr.margin-divider
+      .row
+        .col-md-7
+          h2.heading
+            | First featurette heading.
+            span.text-muted
+              | It'll blow your mind.
+          p.lead 
+            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        .col-md-5
+          img.image.img-responsive.center-block[src="https://www.tuchuang001.com/images/2017/04/13/bram-naus-221602.md.jpg" ]
+    hr.margin-divider
+      .row
+        .col-md-5
+          img.image.img-responsive.center-block[src="https://www.tuchuang001.com/images/2017/04/13/anna-demianenko-12400.md.jpg" ]
+        .col-md-7
+          h2.heading
+            | First featurette heading.
+            span.text-muted
+              | It'll blow your mind.
+          p.lead 
+            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+    hr.margin-divider
+      .row
+        .col-md-7
+          h2.heading
+            | First featurette heading.
+            span.text-muted
+              | It'll blow your mind.
+          p.lead 
+            | Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        .col-md-5
+          img.image.img-responsive.center-block[src="https://www.tuchuang001.com/images/2017/04/13/zachary-staines-181102.md.jpg" ]
+    hr.margin-divider
 

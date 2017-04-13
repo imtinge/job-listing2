@@ -1,3 +1,39 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// for index
+#landing-page-img-1 {
+  border-radius: 0;
+  background-image: url('https://www.tuchuang001.com/images/2017/04/13/caspar-rubin-224229.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  h1, h2 {
+    color: white;
+  }
+  p {
+    a {
+      margin-top:30px;
+    }
+  }
+}
+
+#three-jobs {
+  margin-top: 100px;
+}
+
+.margin-divider {
+  margin: 80px 0;
+}
+
+.heading {
+  font-weight: normal;
+  margin-top: 120px;
+  font-size: 50px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+

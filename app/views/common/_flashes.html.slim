@@ -1,8 +1,8 @@
 - user_facing_flashes.each do |msg_type, msg|
   | <div class="alert alert-dismissable alert-
   = flash_class(msg_type)
-  | ">
-  button.close[data-dismiss="alert"]
-    | &times;
+  | " role="alert">
+  button.close[type="button" data-dismiss="alert" aria-label="Close"]
+    | <span aria-hidden="true">&times;</span>
   = msg
   | </div>
