@@ -5,7 +5,8 @@
 // for index
 #landing-page-img-1 {
   border-radius: 0;
-  background-image: url('https://www.tuchuang001.com/images/2017/04/13/caspar-rubin-224229.jpg');
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url('https://www.tuchuang001.com/images/2017/04/15/business-man-and-woman-handshake-in-work-office-picjumbo-com.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 250px;
@@ -25,7 +26,7 @@
 }
 
 .margin-divider {
-  margin: 80px 0;
+  margin: 30px 0;
 }
 
 .heading {
@@ -36,4 +37,15 @@
   letter-spacing: -1px;
 }
 
+#btn-sign-up {
+  border: 1px solid #fff;
+  margin-top: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  &:hover {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+  }
+}
 

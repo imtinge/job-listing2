@@ -2,24 +2,33 @@ nav.navbar.navbar-inverse.navbar-fixed-top#navigation
   .container
     .navbar-header
       a.navbar-brand[href="/"]
-        | 闪工网
+        => render_icon 'fa fa-paper-plane-o'
+        | 高就网
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         -unless user_signed_in?
           li
-            == link_to '注册', new_user_registration_path
+            a.btn[href="/users/sign_in"]
+              => render_icon 'fa fa-sign-in'
+              | 登陆
           li
-            == link_to '登陆', new_user_session_path
+            a.btn#btn-sign-up[href="/users/sign_up"]
+              => render_icon 'fa fa-user-plus'
+              | 注册
         -else
           li.dropdown
             a.dropdown-toggle[href="#" data-toggle="dropdown"]
-              | Hi,
+              => render_icon 'fa fa-user-circle'
               == current_user.email
               b.caret
             ul.dropdown-menu
               -if current_user.admin?
                 li
-                  == link_to '管理员面板', admin_jobs_path
-              li
-                == link_to '退出', destroy_user_session_path, method: :delete
+                  a.btn#btn-sign-up[href="/admin/jobs"]
+                    => render_icon 'fa fa-id-card-o'
+                    | 管理员面板
+                li
+                  a.btn#btn-sign-up[rel="nofollow" data-method="delete" href="/users/sign_out"]
+                    => render_icon 'fa fa-sign-out'
+                    | 退出
 
