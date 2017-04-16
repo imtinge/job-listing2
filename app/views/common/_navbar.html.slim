@@ -31,4 +31,10 @@ nav.navbar.navbar-inverse.navbar-fixed-top#navigation
                   a.btn#btn-sign-up[rel="nofollow" data-method="delete" href="/users/sign_out"]
                     => render_icon 'fa fa-sign-out'
                     | 退出
+      = form_tag search_jobs_path, method: :get, class: 'navbar-form navbar-right' do
+        .input-group
+          = text_field_tag :q, nil, class: 'form-control', placeholder: '关键字搜索'
+          span.input-group-btn
+            button.btn.btn-default[type="submit"]
+              span.glyphicon.glyphicon-search
 
