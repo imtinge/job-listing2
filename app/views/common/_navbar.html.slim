@@ -12,11 +12,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top#navigation
       ul.nav.navbar-nav.navbar-right
         -unless user_signed_in?
           li
-            a.btn[href="/users/sign_in"]
+            a.btn[href="#" data-toggle="modal" data-target="#signup-modal"]
               => render_icon 'fa fa-sign-in'
               | 登陆
           li
-            a.btn#btn-sign-up[href="/users/sign_up"]
+            a.btn#btn-sign-up[href="#", data-toggle="modal" data-target="#login-modal"]
               => render_icon 'fa fa-user-plus'
               | 注册
         -else
@@ -41,4 +41,5 @@ nav.navbar.navbar-inverse.navbar-fixed-top#navigation
           span.input-group-btn
             button.btn.btn-default[type="submit"]
               span.glyphicon.glyphicon-search
+
 
