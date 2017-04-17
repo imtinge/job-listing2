@@ -1,0 +1,31 @@
+h2 查找结果
+.search-info-title
+-if @query_string.blank?
+  | 对不起，查询内容不能为空，请输入工作岗位名称或描述
+-elsif @jobs.empty?
+  | 对不起，找不到有关#{@query_string}的工作
+-else
+.search-result
+  table.table.table-boldered
+    thead
+      tr
+        th 发布日期
+        th 岗位名称
+        th 岗位描述
+        th 薪资下限
+        th 薪资上限
+    tbody
+      - @jobs.each do |job|
+        tr
+          td
+            = local_time(job.created_at).to_date
+          td
+            = link_to render_highlight_content(job.title, @query_string), job_path(job)
+          td
+            = link_to render_highlight_content(job.description, @query_string)
+          td
+            = link_to job.wage_lower_bound
+          td
+            = link_to job.wage_upper_bound
+  .text-center
+    = will_paginate(@jobs)

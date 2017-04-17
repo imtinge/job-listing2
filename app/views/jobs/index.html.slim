@@ -15,24 +15,19 @@ table.table.table-boldered
     tr
       th 发布日期
       th 岗位名称
+      th 岗位描述
       th 薪资下限
       th 薪资上限
-      th[colspan="2"]
   tbody
     - @jobs.each do |job|
       tr
         td
-          = job.created_at.to_date
+          = local_time(job.created_at).to_date
         td
           = link_to job.title, job_path(job)
+        td
+          = link_to job.description
         td
           = link_to job.wage_lower_bound
         td
           = link_to job.wage_upper_bound
-        td 
-          => link_to 'Edit', edit_job_path(job)
-          | |
-          =< link_to 'Destroy', job_path(job), method: :delete
-
-
-

@@ -1,10 +1,14 @@
 nav.navbar.navbar-inverse.navbar-fixed-top#navigation
   .container
     .navbar-header
+      button.navbar-toggle[type="button" data-toggle="collapse" data-target="#my-navbar"]
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
       a.navbar-brand[href="/"]
         => render_icon 'fa fa-paper-plane-o'
         | 高就网
-    .collapse.navbar-collapse
+    #my-navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         -unless user_signed_in?
           li
